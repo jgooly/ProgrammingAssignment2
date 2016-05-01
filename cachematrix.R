@@ -5,11 +5,12 @@
 ## inverse matrix has been calculated, the inverse matrix is returned from
 ## the cache. 
 
-## Create a function that returns a list of 4 functions that can be used with 
+## makeVector: Create a function that returns a list of 4 functions that can be used with 
 ## cacheSolve to return the matrix, reset the matrix and inverse matrix data,
 ## return the inverse matrix, or set the inverse matrix.
 
 makeVector <- function(x = matrix()) {
+  
   # Set inverse matrix var to NULL
   inv_m <- NULL
   
@@ -24,6 +25,7 @@ makeVector <- function(x = matrix()) {
   
   # Set the inv_m var with the inverse matrix.
   set_inverse_matrix <- function(inverse_matrix) inv_m <<- inverse_matrix
+  
   # Return the inverse matrix.
   get_inverse_matrix <- function() inv_m
   
@@ -32,6 +34,9 @@ makeVector <- function(x = matrix()) {
        set_inverse_matrix = set_inverse_matrix,
        get_inverse_matrix = get_inverse_matrix)
 }
+
+## cacheSolve: Create a function that takes the makeVector object
+## as an input to calculate or return the inverse matrix. 
 
 cacheSolve <- function(x, ...) {
   
